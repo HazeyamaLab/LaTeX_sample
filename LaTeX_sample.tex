@@ -1,0 +1,94 @@
+\documentclass[a4j, twocolumn, 9pt]{jsarticle}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage{colortbl}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{latexsym}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{here}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots, pgfplotstable, booktabs}
+\usepackage{caption}
+\usetikzlibrary{positioning}
+\pgfplotsset{compat=1.12}
+% 上下に1.5cm，左右に1.5cmの余白を取る
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+% 図の上下の余白の設定
+
+\setlength\intextsep{1.0pt}
+\setlength\textfloatsep{1.0pt}
+
+\title{LaTeXできれいな文章を書く}
+\author{E18-5408 佐藤 央}
+
+
+
+\renewcommand{\baselinestretch}{0.8} % 行間の倍率設定
+\begin{document}
+\date{2022/03/11}
+\maketitle
+
+\section{はじめに}
+\label{introduction}
+ここが文章のスタート，LaTeXできれいな文章を書くテンプレート．
+\par
+段落替えをするにはこんな感じでparを打つ．パラグラフの略です．
+\par
+参考文献を示すときは，文中にはciteコマンドで示して，thebibliography部分で定義する．富田の研究\cite{santa},増田らの研究\cite{ski}←こんな感じで表示される．
+\section{章}
+ここが章の階層
+\subsection{節}
+ここが節の階層
+
+\section{いろいろあるアイテム}
+ここはアイテムのテスト，列挙リスト，表，図をそれぞれ説明します．\\
+まずは列挙リストの例．ちなみにこの行の先頭のように改行だけをするならバックスラッシュ2回
+\begin{itemize}
+  \item 花\\
+  改行してアイテムの説明，これはお花．
+  \item 鳥
+  \item 風
+  \item 月
+\end{itemize}
+\par
+次に表の例．表は[h]オプションをつけて位置をソースコードの場所に固定しています．
+\begin{table}[h]
+  \caption{表の例}
+  \centering
+
+  \begin{tabular}{|l||c|c|c|c|}
+    \hline
+    質問＼回答者 & 朝日 & 麒麟 & 札幌 & 燦鳥 \\
+     \hline \hline
+     Q1 & ○ & ○ & &\\
+     \hline
+     Q2 & ○ &  & ○ &\\
+     \hline
+     Q3 &  & ○ & & ○ \\
+     \hline
+  \end{tabular}
+\end{table}
+\par
+次に図の例．同じく[h]オプションで位置を固定しています．
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{imgs/ski.jpg}
+  \caption{スキーの写真}
+\end{figure}
+
+
+\begin{thebibliography}{99}
+  \bibitem{santa} 富田昌平,子どもはなぜサンタクロースを信じ、やがて信じなくなるのか？ : 大学生による回想報告をもとに, 三重大学教育学部研究紀要, 自然科学・人文科学・社会科学・教育科学, pp. 149-158, 2014
+  \bibitem{ski} 増田知之,呉羽正昭, 長野県の閉鎖・休業スキー場に共通する傾向 , スキー研究15巻1号 , pp.12-35, 2018 
+\end{thebibliography}
+
+\section*{前回の議論}
+\noindent
+議論とかを書く章(章番号とインデントを無効化)
+
+\end{document}
